@@ -10,12 +10,23 @@ const PORT = process.env.PORT || 5000; // Use environment variable for port
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key'; // Use environment variable for JWT secret
 
 // Middleware
-const allowedOrigins = ['https://java-script-adventure.vercel.app/']; // Add your frontend URL here
+const allowedOrigins = ['https://java-script-adventure.vercel.app']; // Add your frontend URL here
+
 app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all necessary methods
+  credentials: true, // Allow credentials (cookies, etc.)
 }));
+
+// Handle preflight requests for all routes
+app.options('*', cors());
+
 app.use(bodyParser.json());
 
 // MongoDB Connection
