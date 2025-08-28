@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow-x: hidden;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.score-bar {
+  font-size: 1.2rem;
+  background: #00c6ff;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+  animation: fadeIn 1s ease;
+}
+
+.level-card {
+  background: linear-gradient(145deg, #1c2b3a, #152534);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  max-width: 700px;
+  width: 100%;
+  transition: transform 0.3s;
+  animation: slideUp 0.8s ease forwards;
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #00f5d4;
+}
+
+p, h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.code-block {
+  background: #111827;
+  color: #00ffb3;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.option {
+  padding: 12px 20px;
+  margin: 10px 0;
+  background: #243045;
+  border: 2px solid #33415c;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.option:hover {
+  background: #33415c;
+  transform: scale(1.02);
+}
+
+.selected {
+  border-color: #00ffff;
+  background: #1d2b45;
+  color: #00ffff;
+}
+
+.code-input {
+  width: 100%;
+  min-height: 150px;
+  background: #0e1725;
+  color: #00ffae;
+  border: 2px solid #33415c;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.code-input::placeholder {
+  color: #888;
+}
+
+.action-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #00ffff;
+  color: #111;
+  border: none;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.action-btn:hover {
+  background: #00d1d1;
+  transform: scale(1.05);
+}
+
+.next-btn {
+  background: #00c2ff;
+}
+
+.next-btn:hover {
+  background: #009edb;
+}
+
+.result-box {
+  margin-top: 20px;
+}
+
+.correct {
+  color: #00ffae;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.wrong {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}

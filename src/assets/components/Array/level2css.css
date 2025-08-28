@@ -1,0 +1,150 @@
+/* Layout and Typography */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f1f2f; /* keep your original background */
+}
+
+.level-container {
+  max-width: 900px;
+  width: 100%;
+  background: #2a2a3d;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  padding: 24px;
+}
+
+/* Headers and Instructions */
+h1 {
+  font-size: 2rem;
+  color: #ffa726;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
+  color: #81d4fa;
+  margin-top: 0;
+}
+
+.challenge-description, .challenge {
+  background: #32324a;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 6px solid #64b5f6;
+}
+
+.challenge ul {
+  list-style-type: '🧙‍♀️ ';
+  padding-left: 24px;
+}
+
+/* Editor Area */
+.editor-container,
+.editor {
+  margin-bottom: 16px;
+}
+
+textarea.code-editor,
+textarea#code-editor {
+  width: 100%;
+  height: 180px;
+  background: #1e1e2e;
+  color: #f8f8f2;
+  font-size: 16px;
+  font-family: 'Fira Code', monospace;
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 12px;
+  resize: vertical;
+}
+
+/* Buttons */
+.button-container,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.run-button {
+  background-color: #81c784;
+  color: #111;
+}
+
+.reset-button {
+  background-color: #e57373;
+  color: #111;
+}
+
+.run-button:hover {
+  background-color: #66bb6a;
+}
+
+.reset-button:hover {
+  background-color: #ef5350;
+}
+
+/* Output, Errors, Hints */
+.output-container,
+.success,
+.error,
+.hint {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.success {
+  background: #2e7d32;
+  color: #c8e6c9;
+  border: 2px solid #66bb6a;
+}
+
+.error {
+  background: #b71c1c;
+  color: #ffcdd2;
+  border: 2px solid #ef5350;
+}
+
+.hint {
+  background: #01579b;
+  color: #b3e5fc;
+  border: 2px dashed #4fc3f7;
+}
+
+.output span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  textarea.code-editor {
+    height: 150px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

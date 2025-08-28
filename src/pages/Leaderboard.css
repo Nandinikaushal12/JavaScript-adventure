@@ -1,0 +1,84 @@
+.leaderboard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.leaderboard-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.export-btn {
+  background: #ffd700;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.3s ease;
+  display: block;
+  margin-left: auto;
+}
+
+.export-btn:hover {
+  background: #e5c100;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 16px;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffd700;
+}
+
+.leaderboard-table td {
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+.leaderboard-table tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}

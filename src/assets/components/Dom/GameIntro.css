@@ -1,0 +1,290 @@
+.briefing-container {
+    padding: 4rem 2rem;
+    width: 1000px;
+    margin: 2rem auto;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(165deg, #1a1f2e, #0f172a);
+    color: #2d64d1;
+    border-radius: 24px;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.briefing-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(79, 195, 247, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background: #0a0f1d;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #f3f4f6;
+    overflow: auto !important;
+    width: 100%;
+}
+
+html {
+    height: auto;
+    overflow: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.intro-text {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin: 0 auto 4rem;
+    max-width: 800px;
+    color: #dbeafe; /* updated: brighter and more legible */
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+
+
+.info-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    margin: 0 40px;
+    
+    /* Hide scrollbar (cross-browser) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+  }
+  
+  .info-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+.info-card {
+    background: rgba(30, 41, 59, 0.7);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 2px 1px rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    backdrop-filter: blur(12px);
+    position: relative;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(56, 189, 248, 0.2),
+        inset 0 2px 1px rgba(255, 255, 255, 0.1);
+}
+
+.info-card h3 {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+.scroller-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .info-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    margin: 0 40px; /* space for buttons */
+  }
+  
+  .info-card {
+    min-width: 250px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+  }
+  .scroll-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0.8;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+  
+  .scroll-btn.left {
+    left: 0;
+  }
+  
+  .scroll-btn.right {
+    right: 0;
+  }
+  
+  .scroll-btn:hover {
+    background-color: #555;
+  }
+  
+ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.05rem;
+    color: #e2e8f0;
+}
+
+ul li {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.75rem;
+    transition: transform 0.2s ease;
+}
+
+ul li:hover {
+    transform: translateX(4px);
+}
+
+ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #38bdf8;
+    transition: color 0.2s ease;
+}
+
+ul li:hover::before {
+    color: #818cf8;
+}
+
+ul li strong {
+    color: #f8fafc;
+    font-weight: 600;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.start-mission {
+    margin-top: 4rem;
+}
+
+.start-button {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: white;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 10px 30px -10px rgba(56, 189, 248, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 20px 40px -12px rgba(56, 189, 248, 0.6),
+        inset 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.start-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.start-button:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        overflow: auto !important;
+    }
+
+    .briefing-container {
+        padding: 2.5rem 1.5rem;
+        margin: 1rem auto;
+        border-radius: 20px;
+    }
+
+    .info-grid {
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .info-card {
+        padding: 2rem;
+    }
+
+    .start-button {
+        padding: 1rem 2.5rem;
+        width: calc(100% - 2rem);
+        margin: 0 1rem;
+    }
+}

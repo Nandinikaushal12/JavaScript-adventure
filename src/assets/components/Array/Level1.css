@@ -1,0 +1,103 @@
+body {
+    background: #1a0f2e;
+    color: #fff;
+    font-family: 'Fantasy', cursive;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    background: rgba(41, 20, 82, 0.9);
+    border: 3px solid #8a2be2;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    min-width: 500px;
+    box-shadow: 0 0 20px #8a2be2;
+    text-align: center;
+}
+
+.inventory {
+    background: rgba(25, 10, 41, 0.8);
+    border: 2px solid #6a1b9a;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.spell-item {
+    display: inline-block;
+    background: #4a148c;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.question {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #e1bee7;
+}
+
+.options {
+    display: grid;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.option {
+    background: #4a148c;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option:hover {
+    background: #6a1b9a;
+    transform: scale(1.05);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.health, .score {
+    background: #311b92;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #b39ddb;
+    text-align: center;
+    text-shadow: 0 0 10px #6a1b9a;
+}
+
+.message {
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    display: none;
+}
+
+.power-up {
+    animation: flash 0.5s ease-in-out 3;
+}
+
+@keyframes flash {
+    0%, 100% { background-color: rgba(255, 255, 0, 0.8); }
+    50% { background-color: rgba(255, 0, 0, 0.8); }
+}
