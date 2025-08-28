@@ -1,13 +1,12 @@
-// vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: './', // Important for relative paths in production
+  base: '/JavaScript-adventure/', // Set the base to your repository name for GitHub Pages
+  plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['react-router-dom'],  // Add this line if Vercel is not resolving it
+      input: './index.html', // Ensure the correct entry point for the build
     },
   },
-  plugins: [react()],
-})
+});

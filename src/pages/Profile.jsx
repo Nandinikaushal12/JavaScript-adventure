@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./profile.css";
+
+// Ensure the correct path to profile.css
+import "./Profile.css";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -9,7 +11,12 @@ const Profile = () => {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (error) {
+        console.error("Error parsing user data:", error);
+        navigate("/login");
+      }
     } else {
       navigate("/login");
     }
@@ -28,8 +35,8 @@ const Profile = () => {
     <div className="profile-container">
       <h2 className="profile-title">User Profile</h2>
       <div className="profile-info">
-        <div><strong>Name:</strong> {user.name}</div>
-        <div><strong>Email:</strong> {user.email}</div>
+        <div><strong>Name:</strong> {user.name || "N/A"}</div>
+        <div><strong>Email:</strong> {user.email || "N/A"}</div>
         <div><strong>Total Score:</strong> {user.totalScore || 0}</div>
       </div>
       <div className="profile-img-container">
