@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000; // Use environment variable for port
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key'; // Use environment variable for JWT secret
 
 // Middleware
-const allowedOrigins = ['https://java-script-adventure.vercel.app']; // Add your frontend URL here
+const allowedOrigins = ['https://java-script-adventure.vercel.app/']; // Add your frontend URL here
 app.use(cors({
   origin: allowedOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
