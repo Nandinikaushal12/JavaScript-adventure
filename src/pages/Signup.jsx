@@ -12,17 +12,18 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      // Update the API URL to point to your deployed backend
+      const res = await fetch("https://java-script-adventure-k15u.vercel.app/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password}),
+        body: JSON.stringify({ name, email, password }),
       });
 
       let data;
       try {
-        data = await res.json(); // parse response safely
+        data = await res.json(); // Parse response safely
       } catch (jsonError) {
         throw new Error("Invalid response from server");
       }
